@@ -1,0 +1,141 @@
+body{
+    background-color: rgba(3, 3, 3, 0.877);
+    width: 1024px;
+    height: 768px;
+    margin: 0 auto;
+}
+div.sign{
+    width: 1024px;
+    height: 768px;
+    background-color:  rgb(154, 127, 171);
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+
+}
+.bor{
+    width:800px;
+    height: 600px;
+    position: absolute;
+    z-index: 9;
+    left: 120px;
+    margin: 100px auto;
+    background-color: rgba(12, 12, 12, 0.699);
+    overflow: hidden;
+
+}
+
+#recode{
+    position: absolute;
+    width: 450px;
+    height: 340px;
+    top: -70px;
+    left: 305px;
+    z-index: 10;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+-webkit-animation: loader1 5s linear infinite;
+    animation: loader1 5s linear infinite;
+    
+}
+
+@-webkit-keyframes loader1{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes loader1{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+.req{
+    color: rgb(255, 212, 22);
+}
+#enroll th{
+    color: antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+}
+#enroll td{
+    color: antiquewhite;
+}
+table#enroll{
+    border: 3px solid  antiquewhite;
+    border-spacing:10px;
+    width: 500px;
+    height: 300px;
+    margin: 120px auto;
+}
+table#enroll th{
+    text-align:right;
+}
+table#enroll td.btn-wrapper{
+    text-align: center;
+}
+.phone {
+    width:30px;
+}
+.short{
+    width:50px;
+}
+label{
+    color: antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 8px;
+}
+#back{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 33px;
+    left: 60px;
+}
+#back:hover{
+    animation: bounce_frames 0.3s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    animation-iteration-count: infinite;
+    }
+
+@keyframes bounce_frames {
+from {
+transform: translate3d(0, 0, 0);
+}
+
+to {
+transform: translate3d(0, -15px, 0);
+}
+}
+#info-table {
+    width: 500px;
+    border: 3px solid antiquewhite;
+    color: antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-collapse: collapse;
+    margin: 10px auto;
+    position: absolute;
+    font-size: 10px;
+    display: none;
+
+}
+#info-table th, #info-table td{
+    border: 3px solid antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: antiquewhite;
+    padding: 5px;
+    text-align: center;
+    font-size: 10px;
+}
+.table-wrapper{
+    width: 530px;
+    height: 150px;
+    margin: 0 auto;
+    top: -90px;
+    left: 15px;
+    position: relative; 
+    overflow-y: scroll;
+}
+.table-wrapper::-webkit-scrollbar{
+    display: none;
+}

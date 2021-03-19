@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rode_map</title>
+    <link rel="stylesheet" href="CSS/rod_map.css">
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+</head>
+<body>
+    <div class="thrid_cover">
+        <img src="images/3앨범스.png" id="cover">
+        <img src="images/3LP.png" alt="" id="recode">
+        <div class="play">
+            <img src="images/play.png" >
+        </div>
+        <div class="wid">
+
+                <div id="slider-wrap">
+                    <ul id="slider">
+                    <li><img src="images/로드맵111.png" id="rod1"></li>
+                    <li><img src="images/로드맵222.png" id="rod2"></li>
+                    <li><img src="images/로드맵333.png" id="rod3"></li>
+                    <li><img src="images/로드맵444.png" id="rod4"></li>
+                    </ul>
+                </div>
+                <div class="back"><a href="index.html"><img src="images/undo.png" alt="메인으로" id="back"></a></div>
+            </div>
+        <!--controls-->
+        <div class="btns" id="next"><img src="images/rewind-button.png"></div>
+            <div class="btns" id="previous"><img src="images/rewind-button.png"></div>
+            <div id="counter"></div>
+    </div>
+    <script>
+        var pos = 0;
+//number of slides
+var $totalSlides = $('#slider-wrap ul li').length;
+//get the slide width
+var $sliderWidth = $('#slider-wrap').height();
+
+var $play = $(".play");
+
+$play.click(function() {
+            $(".wid").fadeTo(100,1)
+        });
+
+        $(document).ready(function(){
+/*****************
+    BUILD THE SLIDER
+  *****************/
+  //set width to be 'x' times the number of slides
+    $('#slider-wrap ul#slider').width($sliderWidth * $totalSlides);
+
+    //next slide  
+    $('#next').click(function(){
+    slideRight();
+    });
+
+  //previous slide
+    $('#previous').click(function(){
+    slideLeft();
+    });
+
+var $autoSlider = setInterval(slideRight, 3000);
+
+});
+/***********
+    SLIDE LEFT
+************/
+function slideLeft(){
+    pos--;
+    if(pos == -1){ pos = $totalSlides-1; }
+    $('#slider-wrap ul#slider').css('top', - ($sliderWidth * pos));  
+}
+/************
+    SLIDE RIGHT
+*************/
+function slideRight(){
+    pos++;
+    if(pos == $totalSlides){ pos = 0; }
+    $('#slider-wrap ul#slider').css('top', - ($sliderWidth * pos)); 
+
+}
+
+    </script>
+</body>
+</html>
